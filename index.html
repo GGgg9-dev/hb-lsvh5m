@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#6c5ce7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="测试面试题">
+<meta name="format-detection" content="telephone=no">
+<title>软件测试面试题 · 答案手册</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body data-mode="book" data-ans="brief">
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">测</div>
+    <div class="brand-text">
+      <h1>软件测试面试题 · 答案手册</h1>
+      <p class="sub">
+        <span id="statCats">0</span> 个分类 ·
+        <span id="statQs">0</span> 道题 ·
+        <span id="statQuiz">0</span> 道追问
+      </p>
+    </div>
+  </div>
+  <button class="bar-toggle" id="barToggle" aria-expanded="true" aria-controls="barActions">
+    <span class="bt-label">收起工具</span>
+    <svg class="bt-ico" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
+  </button>
+  <div class="actions" id="barActions">
+    <div class="seg" id="modeSeg">
+      <button class="seg-btn on" data-mode="book">背题手册</button>
+      <button class="seg-btn" data-mode="write">默写自测</button>
+    </div>
+    <div class="seg" id="ansSeg" title="答案详略程度">
+      <button class="seg-btn on" data-ans="brief">简洁</button>
+      <button class="seg-btn" data-ans="detail">详细</button>
+    </div>
+    <button class="btn ghost" id="docsBtn">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H19v3H6.5A2.5 2.5 0 0 1 4 20.5z"/></svg>
+      项目口述稿
+    </button>
+    <button class="btn ghost" id="toggleAnswers">
+      <span class="dot"></span>隐藏答案
+    </button>
+    <button class="btn ghost" id="howBtn">答题方法</button>
+    <button class="btn ghost" id="exportBtn">导出默写</button>
+    <button class="btn danger" id="clearAll">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/><path d="M10 11v6M14 11v6"/></svg>
+      清空答题痕迹
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="side-head">
+      <h2>题目分类</h2>
+      <button class="side-toggle" id="sideToggle" title="收起/展开目录">
+        <span>收起</span>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 15l6-6 6 6"/></svg>
+      </button>
+      <p class="side-sub" id="sideSub">20 个分类 · 449 道题</p>
+    </div>
+
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <input id="search" type="text" placeholder="搜索题目 / 关键词，如 边界值、TPS" autocomplete="off">
+      <button class="clear-input" id="clearSearch" title="清空">×</button>
+    </div>
+    <div class="search-hint" id="searchHint"></div>
+
+    <nav class="cat-list" id="catList"></nav>
+
+    <div class="side-foot">
+      <div class="progress-card">
+        <div class="pc-top">
+          <span>默写完成度</span>
+          <span id="pcNum">0 / 0</span>
+        </div>
+        <div class="pc-bar"><i id="pcBar"></i></div>
+        <div class="pc-bottom">
+          <span>已交 <b id="pcDone">0</b> 题 · 均分 <b id="pcAvg">—</b></span>
+          <button id="clearAllSide" class="link-btn">清空</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content" id="content">
+    <div class="search-view" id="searchView" hidden>
+      <div class="sv-head">
+        <h2>搜索结果</h2>
+        <span id="svCount"></span>
+      </div>
+      <div id="svBody"></div>
+    </div>
+
+    <div id="catSections">
+      <div id="bookSections" class="book-only"></div>
+      <div id="writeSections" class="write-only"></div>
+    </div>
+
+    <footer class="page-foot">
+      共 <span id="footQs">0</span> 道面试题 · <span id="footQuiz">0</span> 道追问 · 答题痕迹仅保存在本机浏览器中
+    </footer>
+  </main>
+</div>
+
+<!-- 项目口述稿（独立视图，内容由 assets/docs.js 渲染） -->
+<div class="doc-view" id="docView" hidden></div>
+
+<button class="to-top" id="toTop" title="回到顶部">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- 答题方法弹窗 -->
+<div class="modal-mask" id="howMask" hidden>
+  <div class="modal modal-wide">
+    <h3>口述答题法：输入 — 活动 — 输出</h3>
+    <div class="how-body">
+      <p>面试官区分「背概念」和「做过项目」的关键，是你的回答里有没有<b>真实项目的痕迹</b>。把每个回答组织成一个小项目故事，三段式：</p>
+      <div class="how-row"><span class="how-tag in">输入</span><div><b>什么场景、什么任务落到你头上</b><br>需求文档 / 接口文档 / 线上告警 / 提测的版本 / 要压测的接口——一句话交代背景，让面试官知道你在什么约束下干活。</div></div>
+      <div class="how-row"><span class="how-tag do">活动</span><div><b>你具体做了什么（1~3 个动作）</b><br>设计用例、搭框架、抓日志、调参数、推动开发……动作要具体到工具和数字，不要说「我认真做了测试」。</div></div>
+      <div class="how-row"><span class="how-tag out">输出</span><div><b>交付了什么、效果如何</b><br>缺陷数、用例数、覆盖率、耗时下降、拦截过几次事故、产出过什么文档。最后可以补一句反思或教训，会显得更真实。</div></div>
+      <div class="how-eg">
+        <div class="eg bad"><span class="eg-tag">✗ 像背的</span>「接口测试是对系统间接口的测试，主要包括参数校验、鉴权验证、异常场景……」</div>
+        <div class="eg good"><span class="eg-tag">✓ 像做过的</span>「<b>输入</b>——我上个项目是电商下单链路，开发提测后给了我 Swagger 文档和测试环境；<b>活动</b>——我先用 Postman 把 23 个接口跑通冒烟，再用 pytest + requests 补了 180 条自动化，覆盖参数边界、鉴权和幂等；<b>输出</b>——每天定时回归，先后拦截过 3 次金额计算的 bug，提测打回率从 30% 降到 8%。」</div>
+      </div>
+      <p class="how-tip">默写自测时，每一题的答题框都按这个框架写；写不出来，说明这道题还没真正「做过」，点「答题结束 · 判分」对照参考答案再补。</p>
+      <div class="how-eg">
+        <div class="eg"><span class="eg-tag">判分怎么看</span>点「答题结束 · 判分」后先出分数，再给「答到了 / 还缺」两行要点。分数 = <b>参考答案要点覆盖率</b>（占大头）+ <b>篇幅够不够口述 45~90 秒</b> + <b>有没有分点、数字和项目视角</b>。浅色标签表示「提到了但不完整」。全部在本地算，不联网、不上传；语义准不准最终还得你自己核，想更严就点「导出默写」发给 AI 批。</div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn ghost" id="howClose">我知道了</button>
+    </div>
+  </div>
+</div>
+
+<!-- 导出弹窗 -->
+<div class="modal-mask" id="exportMask" hidden>
+  <div class="modal">
+    <h3>导出默写记录</h3>
+    <p>生成 Markdown 文件，把你的回答发给 AI 或面试官审阅</p>
+    <div class="exp-form">
+      <label class="exp-row">
+        <span>导出范围</span>
+        <select id="expScope"></select>
+      </label>
+      <label class="exp-row chk">
+        <input type="checkbox" id="expRef">
+        <span>附参考答案（发给 AI 批改时可不勾）</span>
+      </label>
+      <label class="exp-row chk">
+        <input type="checkbox" id="expDone" checked>
+        <span>只导出已作答的题</span>
+      </label>
+    </div>
+    <div class="modal-actions">
+      <button class="btn ghost" id="exportCancel">取消</button>
+      <button class="btn primary" id="exportOk">导出 Markdown</button>
+    </div>
+  </div>
+</div>
+
+<!-- 确认弹窗 -->
+<div class="modal-mask" id="modalMask" hidden>
+  <div class="modal">
+    <h3 id="modalTitle">确认操作</h3>
+    <p id="modalText"></p>
+    <div class="modal-actions">
+      <button class="btn ghost" id="modalCancel">取消</button>
+      <button class="btn danger" id="modalOk">确认清空</button>
+    </div>
+  </div>
+</div>
+
+<div class="voice-fab" id="voiceFab" hidden>
+  <i class="pulse"></i>
+  <span class="fab-txt">正在听你说话，说完点右边停止</span>
+  <button class="fab-stop">停止</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data/data-a.js"></script>
+<script src="data/data-b.js"></script>
+<script src="data/data-c.js"></script>
+<script src="data/data-d.js"></script>
+<script src="data/data-e.js"></script>
+<script src="data/data-f.js"></script>
+<script src="data/detail-a.js"></script>
+<script src="data/detail-b.js"></script>
+<script src="data/detail-c.js"></script>
+<script src="data/detail-d.js"></script>
+<script src="data/detail-e.js"></script>
+<script src="data/detail-f.js"></script>
+<script src="data/asks.js"></script>
+<script src="docs/manifest.js"></script>
+<script src="docs/zhishu/bank-v1.js"></script>
+<script src="docs/sim/bank-v1.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>
