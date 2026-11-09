@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仓储项目面试口述稿：能背、能讲、扛得住追问</title>
+<style>
+  :root{
+    --bg:#f4f6fa; --panel:#fff; --ink:#172033; --muted:#5b6779; --line:#e2e8f0;
+    --brand:#1f5eff; --soft:#eaf0ff; --green:#0b8f6a; --green-soft:#e7f6ef;
+    --amber:#b45309; --amber-soft:#fff4e5; --red:#a83232; --red-soft:#fdecec;
+    --radius:14px; --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75;font-size:15px}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 76px}
+  header.hero{background:linear-gradient(135deg,#0b1730 0%,#14336e 58%,#1f5eff 100%);color:#fff;padding:50px 24px 42px;margin-bottom:24px}
+  .hero-inner{max-width:1080px;margin:0 auto}
+  .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-bottom:12px}
+  h1{font-size:30px;line-height:1.35;margin:0 0 14px;font-weight:700}
+  .hero p{max-width:960px;color:#dce6ff;margin:0;font-size:15px}
+  .verdict{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .v-pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);border-radius:11px;padding:8px 13px;font-size:13px;color:#fff}
+  .v-pill strong{color:#ffd76a}
+  nav.toc{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:13px 18px;box-shadow:var(--shadow);margin-bottom:22px;display:flex;flex-wrap:wrap;gap:6px 14px;position:sticky;top:0;z-index:20}
+  nav.toc a{font-size:12.8px;color:#33415c;padding:4px 8px;border-radius:8px}
+  nav.toc a:hover{background:var(--soft);text-decoration:none;color:var(--brand)}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 30px 26px;margin-bottom:22px}
+  h2{font-size:22px;margin:0 0 6px}
+  h3{font-size:16.5px;margin:26px 0 10px;padding-left:11px;border-left:4px solid var(--brand)}
+  h4{font-size:14.5px;margin:18px 0 6px;color:#24324a}
+  .sub{color:var(--muted);font-size:13.3px;margin:0 0 14px}
+  table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:12.8px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f2f5fa;color:#26344d;font-weight:600;white-space:nowrap}
+  tbody tr:nth-child(even){background:#fafbfd}
+  ul,ol{margin:7px 0;padding-left:21px}
+  li{margin:5px 0}
+  /* 口述稿块 */
+  .say{background:#f7faff;border:1px solid #d6e3fb;border-left:5px solid var(--brand);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:14.2px;line-height:1.95;color:#1b2942}
+  .say b{color:#0f3fa8;font-weight:700}
+  .say .lbl{display:inline-block;font-size:11px;letter-spacing:.08em;color:#fff;background:var(--brand);border-radius:5px;padding:1px 8px;margin-bottom:8px;vertical-align:middle}
+  .say .lbl.o{background:#6b7a94}
+  .say .lbl.g{background:var(--green)}
+  .say p{margin:0 0 8px}
+  .say p:last-child{margin-bottom:0}
+  .note{background:var(--amber-soft);border:1px solid #f3dfb8;border-radius:10px;padding:11px 13px;font-size:12.8px;color:#6b4a12;margin:13px 0}
+  .note.blue{background:var(--soft);border-color:#c9dafd;color:#24457f}
+  .note.green{background:var(--green-soft);border-color:#bfe8d8;color:#0a5c45}
+  .note.red{background:var(--red-soft);border-color:#f2c9c9;color:#8f2c2c}
+  .tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;margin-right:3px;white-space:nowrap}
+  .t-must{background:#fff0d6;color:#8a4b00;border:1px solid #f3d9a8}
+  .t-opt{background:var(--soft);color:#1746b6}
+  .t-no{background:var(--red-soft);color:#a83232}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .card{border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:#fbfcfe}
+  .card h4{margin:0 0 6px;font-size:14px}
+  .card p{margin:0;color:var(--muted);font-size:12.8px;line-height:1.68}
+  .bad{color:#a83232}
+  .good{color:#0b6b50}
+  .q{font-weight:600;color:#1c2f4d}
+  pre{background:#0e1a2f;color:#dbe6ff;border-radius:12px;padding:15px 17px;font-size:12.2px;line-height:1.8;overflow:auto;margin:10px 0}
+  .chk{list-style:none;padding-left:0}
+  .chk li{padding-left:24px;position:relative;margin:6px 0}
+  .chk li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:700}
+  .chk li.x::before{content:"✕";color:var(--red)}
+  .memo{background:#0e1a2f;color:#dbe6ff;border-radius:14px;padding:24px 26px;font-size:14px;line-height:2.05;margin:12px 0}
+  .memo b{color:#ffd76a}
+  .memo .num{color:#7fb0ff;font-weight:700;margin-right:6px}
+  .footer{color:var(--muted);font-size:12.3px;text-align:center;padding:6px 0}
+  @media(max-width:900px){
+    .grid{grid-template-columns:1fr}
+    h1{font-size:24px}
+    section{padding:22px 16px}
+    nav.toc{position:static}
+    table{font-size:12px}
+  }
+  @media print{nav.toc{display:none} section{break-inside:avoid;box-shadow:none} .memo{background:#fff;color:#172033} .memo b{color:#a83232} .memo .num{color:#1f5eff}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Interview Script · Warehouse Project</div>
+    <h1>仓储项目面试口述稿</h1>
+    <p>这不是提纲，是可以直接开口念的稿子。分三层：<strong>必背的骨架句</strong>（每节带 ★）、<strong>熟悉的展开段</strong>、<strong>只准备不背的细节</strong>。标签标了数字的地方是你必须填的真实数据，其余一字不改也能讲完一整场。</p>
+    <div class="verdict">
+      <span class="v-pill">开场 <strong>15 秒 / 60 秒 / 3 分钟</strong></span>
+      <span class="v-pill">模块 <strong>3 个，各两版</strong></span>
+      <span class="v-pill">追问 <strong>20 问 + 差答 / 好答</strong></span>
+      <span class="v-pill">最后 <strong>一页速记卡</strong></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="toc">
+  <a href="#howto">怎么用这份稿</a>
+  <a href="#intro">一、开场自我介绍</a>
+  <a href="#module">二、三个模块怎么讲</a>
+  <a href="#bill">三、计费专项（可选）</a>
+  <a href="#link">四、关联怎么测</a>
+  <a href="#design">五、测试设计方法论</a>
+  <a href="#auto">六、自动化</a>
+  <a href="#debug">七、定位与反馈</a>
+  <a href="#code">八、代码要看哪</a>
+  <a href="#qa">九、追问 20 问</a>
+  <a href="#memo">十、速记卡</a>
+</nav>
+
+<section id="howto">
+  <h2>怎么用这份稿</h2>
+  <p class="sub">背错顺序比背不下来更糟。先看这一节，能省你两天。</p>
+
+  <div class="grid">
+    <div class="card">
+      <h4>三层记忆法</h4>
+      <p><strong>第一层（必背，8 句骨架）</strong>：带 ★ 的句子，是整场面试的骨架，必须条件反射。<br>
+      <strong>第二层（熟悉）</strong>：蓝色口述块，能用自己的话说出七八成即可。<br>
+      <strong>第三层（只准备不背）</strong>：表格里的细节，被问到能查、能想起来就行。</p>
+    </div>
+    <div class="card">
+      <h4>每个模块都用同一个三段式</h4>
+      <p><strong>是什么 → 难在哪 → 我怎么测。</strong><br>
+      顺序不能变。多数人只讲第一段（是什么），所以听起来像产品介绍；第二段决定你有没有懂业务，第三段决定你会不会测试。</p>
+    </div>
+    <div class="card">
+      <h4>标签约定</h4>
+      <p><span class="tag t-must">填</span> 真实数据，必须替换成你的数字<br>
+      <span class="tag t-opt">可选</span> 没做过就别讲，讲了会崩<br>
+      ★ 必背骨架句，一个字都别改</p>
+    </div>
+    <div class="card">
+      <h4>总时长控制</h4>
+      <p>自我介绍 <strong>60 秒</strong>；被问“具体讲讲”给 <strong>2–3 分钟</strong>；单个模块 <strong>30 秒起步、2 分钟封顶</strong>。超过 2 分钟对方会走神，等于白讲。</p>
+    </div>
+  </div>
+
+  <div class="note red">
+    <strong>一条铁律：</strong>凡是你没亲手做过的，<strong>不要放进“我负责”的句子里</strong>。可以放进“我参与过”“我看过”“这块不在我范围但我了解关联”。这两种说法在面试官耳朵里的可信度差十倍。
+  </div>
+</section>
+
+<section id="intro">
+  <h2>一、开场自我介绍</h2>
+  <p class="sub">同一个项目，讲法决定估值。10 元讲“我做了什么功能”，上万讲“如果我不做会出什么事”。核心是把功能坐标换成<strong>风险坐标</strong>。</p>
+
+  <h3>1.1 十五秒版（被问“介绍一下你的项目”）★</h3>
+  <div class="say">
+    <span class="lbl">口述 · 15 秒</span>
+    <p>我做的是一个<strong>第三方仓储系统</strong>，客户把货存在我们仓里，我们按合同收仓租和操作费。这类系统的死穴是<strong>库存对不上</strong>——所以它库存不存一个数字，是作业流水累加算出来的。</p>
+    <p>我负责<strong>出库履约</strong>和<strong>库存盘点</strong>这两段，专门守“数量不能错”这条线。</p>
+  </div>
+  <p class="sub">三句话：<strong>生意 → 死穴 → 我的位置</strong>。第三句的“作业流水累加”是个钩子，它会引来下一个问题，而这个问题在你准备好的区域里。</p>
+
+  <h3>1.2 六十秒版（正式介绍）★</h3>
+  <div class="say">
+    <span class="lbl">口述 · 60 秒</span>
+    <p>这是一个 <strong>3PL 的 WMS</strong>，多货主、多仓库。核心是三条链路：入库、出库、库存。</p>
+    <p>业务上的难点是钱——仓租按体积按天算、操作费按单量算，账算错客户会投诉；技术上的难点是数量——库存不靠改字段，靠上架、下架、移库、盘盈亏这些流水累加出来，所以任何一个动作漏记一条流水，数字就永久偏了。</p>
+    <p>我负责三块：<strong>出库履约</strong>，就是分配、拣货、复核、发货这条主链；<strong>库存与盘点</strong>，包括状态台账和盘点差异处理；还有<strong>接口回归</strong>。</p>
+    <p>三个模块里，库存和盘点是唯一有数学约束的，我把它做成了<strong>可断言的东西</strong>——每次操作后跑一条恒等式，在提测当天就能发现问题，而不是等月底财务对账才发现。</p>
+  </div>
+
+  <h3>1.3 三分钟版（被问“你具体讲讲”，四个节拍）</h3>
+  <table>
+    <thead><tr><th>节拍</th><th>讲什么</th><th>关键句（照着说）</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>① 业务</td>
+        <td>谁在用、钱怎么收、为什么难</td>
+        <td>“多个货主的货混存在同一个库位，所以每一笔库存都必须能追到<strong>货主、SKU、批次、库位</strong>四个维度，少一个维度就对不上账。”</td>
+      </tr>
+      <tr>
+        <td>② 系统</td>
+        <td>单据状态机 + 库存台账，两条腿</td>
+        <td>“<strong>单据是状态机，库存是台账。</strong>库存不存数值，是把作业流水累加出来的，所以它天然会因为漏记一条流水而漂移。”</td>
+      </tr>
+      <tr>
+        <td>③ 难点</td>
+        <td>三个设计冲突，不是三个功能</td>
+        <td>“分配会锁库存，锁会过期；盘点会锁库位，但库位上的货可能正要出库。<strong>这两个都是设计层面的冲突，不是 bug。</strong>”</td>
+      </tr>
+      <tr>
+        <td>④ 我的位置</td>
+        <td>三块职责 + 一个可验证的方法</td>
+        <td>“我的做法是把‘数量不能错’变成一条能自动跑的断言：<strong>在库可用 + 锁定 + 冻结 = 物理库存</strong>。跑不通，就是有状态没回滚。”</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note blue">
+    <strong>讲三分钟版时的一个技巧：</strong>每讲完一个节拍停半秒，看对方有没有要追问。他要是插话了，<strong>就顺着他的问题走，别把四节拍讲完</strong>。硬讲完四节拍是最典型的“背稿”信号。
+  </div>
+
+  <h3>1.4 三个钩子：主动埋，等他问</h3>
+  <p class="sub">介绍不是讲完，是讲一半留一半。原则：<strong>主动说出一个反常识的事实，然后停下来。</strong></p>
+  <table>
+    <thead><tr><th>钩子句</th><th>他会问</th><th>你要准备好的东西</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>“库存是流水算出来的，不是存出来的”</td>
+        <td>“那怎么保证不出错？”</td>
+        <td>七态台账 + 恒等式断言（见 2.2、5.3）</td>
+      </tr>
+      <tr>
+        <td>“分配会锁库存，而且锁会过期”</td>
+        <td>“过期之后呢？被别人拿走了怎么办？”</td>
+        <td>软锁时长、续锁上限、每分钟扫描、竞争窗口用例（见 5.4）</td>
+      </tr>
+      <tr>
+        <td>“盘点建单就锁库位”</td>
+        <td>“那盘点期间要发货怎么办？”</td>
+        <td>状态冲突判定：这是需求问题不是缺陷（见 9 问 7）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>1.5 开场就要防的三个坑</h3>
+  <ul class="chk">
+    <li class="x">别按页面讲（登录 → 菜单 → 列表 → 导出）——这是最典型的 10 元讲法，一听就是照着界面念</li>
+    <li class="x">别说“功能很多、工作量很大”——工作量是最不值钱的卖点，谁都能说</li>
+    <li class="x">别一上来报技术栈——“Spring Boot 3 + Vue3” 是工具，不是你的价值</li>
+  </ul>
+</section>
+
+<section id="module">
+  <h2>二、三个模块怎么讲</h2>
+  <p class="sub">每个模块给两版：30 秒（对方只想听个大概）和 2 分钟（对方明显在深挖）。三段式永远是<strong>是什么 → 难在哪 → 我怎么测</strong>。</p>
+
+  <h3>2.1 出库履约</h3>
+
+  <h4>30 秒版 ★</h4>
+  <div class="say">
+    <span class="lbl">口述 · 30 秒</span>
+    <p>出库履约是从<strong>出库通知到发货回单</strong>这一条链，中间有 6 个状态、40 多个动作接口。我主要测三件事：<strong>状态能不能正确流转、库存能不能正确锁定和释放、异常分支会不会留下脏数据。</strong></p>
+    <p>这条链上最容易出问题的不是正常流程，是取消和回滚——比如取消发货之后，之前锁定的库存有没有回到可用。</p>
+  </div>
+
+  <h4>2 分钟版（深挖时）</h4>
+  <div class="say">
+    <span class="lbl">口述 · 2 分钟</span>
+    <p><strong>先把链路说清：</strong>出库单进来之后先做<strong>库存分配</strong>，分配会按策略挑库位，我们有 FIFO、整托、就近三种策略；分配完成库存就被<strong>锁</strong>住了，然后生成拣货任务，拣完做<strong>复核称重</strong>，称重偏差超过 3% 直接拦截并生成异常单，最后<strong>发货</strong>登记承运商和运单，回单之后单据才算完成。</p>
+    <p><strong>再说怎么测：</strong>我按状态机分三批。第一批正向流转，覆盖 80% 的主流程；第二批专测回退和取消，包括取消分配、取消发货、缺货回填、短拣差异审核；第三批测并发和边界，比如两单抢同一批库存。</p>
+    <p><strong>关键点有三个：</strong>一是<strong>锁的释放时机</strong>——拣货就扣库存还是发货才扣，这两个口径不一样，测试预期完全不同；二是<strong>数量以谁为准</strong>——计划拣 10 件、实拣 8 件、复核称重又有个数，三个数量打架时系统认哪个；三是<strong>异常分支的副作用</strong>——取消发货之后，锁定量、流水、异常单三处是不是都回滚了。</p>
+  </div>
+
+  <table>
+    <thead><tr><th>分析维度</th><th>这个模块的关键点</th></tr></thead>
+    <tbody>
+      <tr><td>状态机</td><td>6 个状态、40 多个动作接口。<strong>非法迁移逐个试</strong>：未分配就拣货、已发货再取消、已取消再发货</td></tr>
+      <tr><td>前置依赖</td><td>分配依赖库存可用量；复核依赖拣货数量；发货依赖复核完成</td></tr>
+      <tr><td>规则参数</td><td>称重偏差 <strong>±3%</strong> 拦截、软锁时长、续锁次数上限、0 件拣货必须填缺货原因</td></tr>
+      <tr><td>落点（副作用）</td><td>单据状态 + 库存流水 + 锁定量 + 异常单</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note green">
+    <strong>一个能立刻显得你懂业务的问题（面试官会记住）：</strong><br>
+    “取消发货之后，锁定的量是回到<strong>在库可用</strong>还是<strong>在途</strong>？如果系统没设计清楚，这就是模糊地带，我会当需求问题提出来确认，而不是直接报 bug。”
+  </div>
+
+  <h3>2.2 库存与盘点</h3>
+
+  <h4>30 秒版 ★</h4>
+  <div class="say">
+    <span class="lbl">口述 · 30 秒</span>
+    <p>库存这块的核心是<strong>状态台账</strong>。库存有七个状态：待检、待上架、在库可用、锁定、冻结、不良、在途。所有状态必须满足一个<strong>恒等式</strong>：在库可用 + 锁定 + 冻结 = 物理库存总量。</p>
+    <p>盘点我测的是<strong>盲盘和明盘两种方式</strong>，以及差异处理的三条路：自动调整、超限复盘、超限审批。</p>
+  </div>
+
+  <h4>2 分钟版（深挖时）</h4>
+  <div class="say">
+    <span class="lbl">口述 · 2 分钟</span>
+    <p><strong>为什么要有七态：</strong>因为一笔货从进仓到出仓会经过好几个阶段——收货后是<strong>待检</strong>，质检通过是<strong>待上架</strong>，上了货位才是<strong>在库可用</strong>；被出库单分配走就变<strong>锁定</strong>；有争议或者客户要求就先<strong>冻结</strong>；质检不合格是<strong>不良</strong>；调拨在路上是<strong>在途</strong>。业务上回答“我有多少货”其实是七个不同的数，所以不能存一个字段。</p>
+    <p><strong>怎么测：</strong>我用<strong>不变量测试</strong>。每做完一类操作——收货、上架、分配、拣货、发货、盘点、移库——就跑一次恒等式断言。<strong>这条断言比几百条功能用例都管用</strong>，因为它不关心你点了哪个按钮，只关心账有没有平。</p>
+    <p><strong>盘点怎么测：</strong>盘点单有盲盘和明盘，盲盘是不告诉盘点人账面数，建单就<strong>锁库位</strong>；盘点完如果差异在<strong>容忍度</strong>之内就自动调整，超了要走复盘，复盘还是超就要审批。所以我测的是：<strong>差异正好等于容忍度</strong>取哪条路、复盘后轮次怎么加、审批通过之后库存和调整流水是不是同时生成。</p>
+  </div>
+
+  <table>
+    <thead><tr><th>分析维度</th><th>这个模块的关键点</th></tr></thead>
+    <tbody>
+      <tr><td>不变量</td><td>在库可用 + 锁定 + 冻结 = 物理库存。<strong>每次操作后必跑</strong></td></tr>
+      <tr><td>状态迁移</td><td>待检 → 待上架 → 在库可用是主干；锁定、冻结、不良、在途是旁支</td></tr>
+      <tr><td>规则参数</td><td>差异容忍度（按数量还是按金额）、复盘轮次、审批层级</td></tr>
+      <tr><td>并发难点</td><td><strong>盘点建单即锁库位</strong>，此时出库单要拣这个库位怎么办</td></tr>
+      <tr><td>落点</td><td>盈亏记录 + 调整流水 + 库存台账 + 差异处置费</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note blue">
+    <strong>加一句很加分的话：</strong>“我会先把七态画成状态图，标出哪几条边是<strong>作业能触发的</strong>、哪几条只能靠后台或定时任务触发。画完就能看出哪些迁移<strong>没有测试入口</strong>——没有入口本身就是缺陷，或者说明需求没做完。”
+  </div>
+
+  <h3>2.3 接口回归与对账</h3>
+  <div class="say">
+    <span class="lbl">口述 · 30 秒</span>
+    <p>第三块是接口回归。我把出库和库存这两条线的主要接口做成了自动化，跑每日回归。<strong>这块的价值不在覆盖多少，在于它能在提测当天就红</strong>——手工回归一次要大半天，接口回归十几分钟出结果。</p>
+  </div>
+  <p class="sub">如果对方追问“对账”而你其实没做过，就停在这里，不要说细。安全说法：“对账那条线我主要是核对账单和流水的对应关系，费率规则本身不在我范围。”</p>
+</section>
+
+<section id="bill">
+  <h2>三、计费专项 <span class="tag t-opt">没测过就别讲</span></h2>
+  <p class="sub">计费的追问深度远超功能测试。如果你确实没测过，跳过这一节，用 2.3 最后那句话收住；如果测过，这是全场最能拉开差距的一段。</p>
+
+  <h3>3.1 四十秒版（被问“计费怎么测”）★</h3>
+  <div class="say">
+    <span class="lbl">口述 · 40 秒</span>
+    <p>计费我不按功能测，我<strong>按公式测</strong>。一笔仓租 = 库存体积 × 单价 × 天数，所以我把公式拆成四个因子：<strong>库存口径、单价来源、天数算法、取整与税率</strong>。四个因子两两交叉就是一组用例，再叠加阶梯价和最低收费的托底。</p>
+    <p>这样测出来的问题通常是<strong>口径问题，不是功能问题</strong>——功能问题是“算不出”，口径问题是“算出来但不对”，后者更致命，因为它不会报错，只会让客户月底来吵架。</p>
+  </div>
+
+  <h3>3.2 九个因子（背这张表就够应付追问）</h3>
+  <table>
+    <thead><tr><th>因子</th><th>业务含义</th><th>怎么测 / 典型缺陷</th></tr></thead>
+    <tbody>
+      <tr><td>单价来源</td><td>客户合同价优先，没有合同回退标准价</td><td>同一客户同一费用项，配合同和不配合同各算一遍，看是否取到正确来源</td></tr>
+      <tr><td>生效时间</td><td>合同从某天开始生效</td><td>跨生效日计费：前一天用旧价、当天用新价；<strong>典型缺陷是整天按一个价算</strong></td></tr>
+      <tr><td>免租期</td><td>入库后前 N 天不收仓租</td><td>第 N 天和第 N+1 天的分界，<strong>边界值最常错</strong></td></tr>
+      <tr><td>阶梯价</td><td>数量越大单价越低，分档计价</td><td>数量正好等于档位起点时取哪一档；<strong>典型缺陷是整笔按最高档算而不是分段累加</strong></td></tr>
+      <tr><td>最低收费</td><td>算出来不足下限时按下限收</td><td>算出来 8 元、下限 20 元，出账应是 20；<strong>典型缺陷是托底只对首月生效</strong></td></tr>
+      <tr><td>折扣</td><td>合同约定的折扣率</td><td><strong>折扣和阶梯的先后顺序</strong>——先折后阶梯、先阶梯后折结果不同，这是最容易出 bug 的地方</td></tr>
+      <tr><td>税率</td><td>含税 / 不含税，默认 6%</td><td>口径是否全链路一致；<strong>舍入是每行舍还是汇总舍</strong></td></tr>
+      <tr><td>取整</td><td>金额精度规则</td><td>单价 × 数量的精度损失方向；四舍五入还是截断，是否全表一致</td></tr>
+      <tr><td>库存口径</td><td>优先用当日库存快照，缺失才回退实时库存</td><td>快照缺失、快照补录、跨月补算时天数会不会算错；<strong>回退逻辑最容易出双份</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 两句“只有读过代码才说得出来”的话</h3>
+  <div class="say">
+    <span class="lbl g">加分</span>
+    <p>① 费用流水上带了<strong>规则版本快照</strong>，所以改合同价<strong>不应该影响历史已出账的流水</strong>。我会专门测这一条：改价之后重建上个月的账单，数字必须一个字都不变。</p>
+    <p>② 系统有<strong>费用冲销</strong>，可以按单据冲、也可以按日账单冲。<strong>冲销不能重复执行</strong>，而且冲销之后对账单的合计必须回到冲销前——这两条我都写成了断言。</p>
+  </div>
+
+  <div class="note">
+    <strong>为什么这两句值钱：</strong>它们证明你不是在“点页面”，而是在<strong>验证一条业务契约</strong>——历史数据不可变性、冲销的可逆性。这是测试设计思维，不是执行力。
+  </div>
+</section>
+
+<section id="link">
+  <h2>四、关联怎么测</h2>
+  <p class="sub">“各种关联”这类问题，考的是你有没有把系统看成一个整体，而不是一堆页面。</p>
+
+  <h3>4.1 原则一句话 ★</h3>
+  <div class="say">
+    <span class="lbl">口述</span>
+    <p>关联测试我只有一个原则：<strong>一个业务动作产生的所有副作用，必须在所有关联表里同时正确。</strong>所以我先列“动作 × 落点”的矩阵，一个动作对应四五个落点，每个落点一条断言。<strong>只验接口返回成功，是抓不到漏落库的。</strong></p>
+  </div>
+
+  <h3>4.2 动作 × 落点矩阵</h3>
+  <table>
+    <thead><tr><th>业务动作</th><th>必须同时正确的落点</th><th>最容易漏的那一处</th></tr></thead>
+    <tbody>
+      <tr><td>收货上架</td><td>库存台账增、流水加一条、<strong>仓租起算日确定</strong>、库位容量占用</td><td>仓租起算日——上架晚一天，租就少算一天</td></tr>
+      <tr><td>库存分配</td><td>单据状态、锁定量、软锁记录（含到期时间）</td><td>软锁记录的到期时间是否被正确写入</td></tr>
+      <tr><td>拣货</td><td>实拣数量、缺货原因、库存扣减</td><td><strong>扣减时机</strong>：拣货扣还是发货扣，口径必须问清</td></tr>
+      <tr><td>复核称重</td><td>偏差判定、异常单生成、以哪个数量为准</td><td>偏差刚好 3% 时是拦还是放</td></tr>
+      <tr><td>发货</td><td>单据完成、承运商运单、<strong>操作费生成</strong>、库存扣减</td><td>操作费的计费时点与单据完成时点不一致</td></tr>
+      <tr><td>取消发货</td><td>单据回到复核完成、锁定量释放、操作费是否冲销</td><td><strong>费用不退</strong>——很多系统只回滚单据不回滚费用</td></tr>
+      <tr><td>盘点审核</td><td>盈亏记录、调整流水、<strong>差异处置费生成</strong>、库位解锁</td><td>库位没解锁，导致后续上架全失败</td></tr>
+      <tr><td>出库质检不合格</td><td>赔付金额、抵扣还是直付、账单里体现为负项</td><td>赔付和账单耦合，容易只生成不抵扣</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note green">
+    <strong>挑一条展开讲，效果最好的是“取消发货”那条：</strong><br>
+    “取消发货是最容易留脏数据的动作。单据要回到复核完成，库存锁定量要释放，如果已经生成了操作费还要冲销——<strong>三个地方只要有一个没回滚，账就不平了</strong>。我见过只回滚单据、费用不退的情况，客户月底对账才发现。”
+  </div>
+</section>
+
+<section id="design">
+  <h2>五、测试设计方法论</h2>
+  <p class="sub">“怎么设计用例”是必考题。别答“用等价类和边界值”——那是课本答案，谁都会背。答<strong>你的用例是从哪来的</strong>。</p>
+
+  <h3>5.1 四问法 ★</h3>
+  <div class="say">
+    <span class="lbl">口述</span>
+    <p>我设计用例的时候不先想功能，先问四个问题：<strong>这个动作改哪些数据、它依赖别人什么状态、它的规则边界在哪、它失败的时候怎么退。</strong></p>
+    <p>四个问题出来，用例自然就有了：前置不满足的是异常用例，落点就是断言，边界就是边界值，失败路径就是回滚用例。<strong>最后剩下的正向流程最不值钱</strong>，十分钟就能写完。</p>
+  </div>
+
+  <h3>5.2 三个具体方法</h3>
+  <table>
+    <thead><tr><th>方法</th><th>怎么做</th><th>适合什么</th></tr></thead>
+    <tbody>
+      <tr><td><strong>状态机覆盖</strong></td><td>把状态和迁移画出来，每条边一条用例，再单独测非法迁移</td><td>出库、盘点这类单据流程</td></tr>
+      <tr><td><strong>不变量测试</strong></td><td>找到一个必须永远成立的等式，每次操作后断言它</td><td>库存、金额——所有有守恒关系的场景</td></tr>
+      <tr><td><strong>边界从常量来</strong></td><td>不看需求文档写“最大值”，直接看代码里的阈值常量，取 N-1 / N / N+1</td><td>称重 3%、软锁时长、差异容忍度</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.3 一个完整案例：软锁的用例是怎么想出来的 ★</h3>
+  <p class="sub">这段是全场最有说服力的一段，因为它展示的是<strong>推导过程</strong>，不是结果。</p>
+  <div class="say">
+    <span class="lbl g">案例 · 90 秒</span>
+    <p>软锁这条用例，不是我拍脑袋想的，是看到两个入口在改同一个状态才想到的。</p>
+    <p>一边是<strong>分配接口</strong>，会把库存锁住并写一个到期时间；另一边是<strong>后台每分钟跑一次的扫描任务</strong>，专门释放已经过期的锁。两个入口改同一份数据，就必然有<strong>竞争窗口</strong>。</p>
+    <p>所以我把用例设计成：先让第一张单分配但<strong>不发货</strong>，等它的锁快到期的时候，用第二张单去抢同一批库存。这时候只会有三种结果——第二单等待、重复分配、或者报错。<strong>这三种里只有一种是对的</strong>，另外两种都会导致超卖或锁丢失。</p>
+    <p>我还会再补一条：第一单在锁到期前<strong>续锁</strong>，看续锁次数有没有上限、超了之后是拒绝还是静默失败。</p>
+  </div>
+
+  <div class="note blue">
+    <strong>为什么这段好：</strong>它同时展示了三件事——你读了代码（知道有定时任务）、你懂并发（知道两个写入口有窗口）、你会设计（把不确定性收敛成三种可判定的结果）。<strong>一场面试讲清这一段，胜过罗列二十个功能。</strong>
+  </div>
+
+  <h3>5.4 不变量怎么落地（被问“怎么断言”时）</h3>
+  <div class="say">
+    <span class="lbl">口述</span>
+    <p>恒等式不能只写在文档里，要能跑。我把它做成一条 SQL，每类操作之后执行一次：<strong>三个状态量加起来等于物理库存</strong>，不等就说明有状态没回滚。</p>
+    <p>更狠一点的做法是<strong>随机操作序列</strong>：随机收货、上架、分配、拣货、取消、盘点，跑一百轮，每轮都校验一次恒等式。<strong>这种测试不需要知道预期结果，只需要知道“账必须平”</strong>——它能抓到人造用例想不到的组合。</p>
+  </div>
+</section>
+
+<section id="auto">
+  <h2>六、自动化</h2>
+  <p class="sub">一年两个月讲“独立搭建框架、覆盖 80%”是把自己架起来。照实讲，讲清<strong>为什么这么选</strong>，比讲覆盖率有说服力。</p>
+
+  <h3>6.1 三十秒版 ★</h3>
+  <div class="say">
+    <span class="lbl">口述 · 30 秒</span>
+    <p>自动化我用 <strong>Python + Pytest + requests</strong>，断言<strong>直接查库</strong>，报告用 allure。选 Python 不是因为性能，是因为<strong>团队其他人能接手改</strong>——一个只有我会维护的测试工程，价值会随着我离职归零。</p>
+    <p>目前覆盖的是出库主链路和库存查询，接口用例 <span class="tag t-must">填：X</span> 条，每日跑一次。</p>
+  </div>
+
+  <h3>6.2 三个关键设计（被追问“怎么搭的”时说）</h3>
+  <table>
+    <thead><tr><th>设计</th><th>做法</th><th>为什么</th></tr></thead>
+    <tbody>
+      <tr><td>token 用 session 级 fixture</td><td>整个测试只登录一次，token 放 Session header</td><td>不然 200 条用例登录 200 次，光登录跑十分钟</td></tr>
+      <tr><td>造数自建自清</td><td>单据由用例自己建、结束自己删</td><td>依赖库里既有数据，第二天数据被改了用例全红，团队就不信自动化了</td></tr>
+      <tr><td>断言封装成函数</td><td><code>assert_stock(货主, SKU, 库位, 可用=10)</code> 一行</td><td>用例里只写业务语义、不写 SQL，别人看得懂也改得动</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.3 目录分层（画出来比说出来强）</h3>
+  <pre>api/          接口封装，一个接口一个函数，参数化
+cases/        用例，按模块分文件（outbound / stock / count）
+data/         造数模板与固定数据
+utils/        db.py（查库断言）、login.py（取 token）、asserts.py
+conftest.py   session 级 token、数据库连接、失败截图
+report/       allure 产物</pre>
+
+  <h3>6.4 断言五层</h3>
+  <table>
+    <thead><tr><th>层</th><th>断言什么</th><th>写法</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>HTTP 状态</td><td><code>assert r.status_code == 200</code></td></tr>
+      <tr><td>2</td><td>业务码</td><td>错误场景断言<strong>具体</strong>错误码，不只断言“不等于 200”</td></tr>
+      <tr><td>3</td><td>结构</td><td>关键字段存在、类型对（list 是数组、total 是数字）</td></tr>
+      <tr><td>4</td><td>业务值</td><td>数量、状态、金额与预期一致</td></tr>
+      <tr><td>5</td><td><strong>数据库一致性</strong></td><td>查库：库存量、流水条数、单据状态</td></tr>
+    </tbody>
+  </table>
+  <div class="say">
+    <span class="lbl">口述 · 第五层</span>
+    <p>第五层是分水岭。比如盘点审核通过后，我会断言三件事：<strong>盘盈盘亏记录</strong>生成了、<strong>库存三个状态量之和</strong>没变、<strong>调整流水</strong>多了一条。只断言接口返回成功，抓不到漏记流水——而那才是最要命的一类缺陷。</p>
+  </div>
+</section>
+
+<section id="debug">
+  <h2>七、定位问题与反馈</h2>
+
+  <h3>7.1 定位五步 ★</h3>
+  <ol>
+    <li><strong>先排除环境与数据</strong>：换账号、换单据能不能复现——是个例还是必然</li>
+    <li><strong>看请求</strong>：前端传了什么、后端返回了什么、有没有错误码</li>
+    <li><strong>看日志</strong>：我们的日志是 DEBUG 级，MyBatis 会打出实际执行的 SQL 和参数</li>
+    <li><strong>查库</strong>：单据状态、库存台账、流水三条一起看，判断是“没执行”还是“执行了但算错”</li>
+    <li><strong>看代码分支</strong>：顺着接口找到那个判断条件，看它在什么情况下不成立</li>
+  </ol>
+
+  <div class="say">
+    <span class="lbl g">话术</span>
+    <p>我定位问题一般<strong>不看前端，先看日志里的 SQL</strong>。因为业务错和显示错是两回事——如果 SQL 更新了但页面没变，是前端问题；如果 SQL 条件不成立根本没更新，是业务问题。<strong>这一步能省掉和开发来回一半的沟通。</strong></p>
+  </div>
+
+  <h3>7.2 缺陷单五要素</h3>
+  <p class="sub">环境与账号 → 前置数据（哪张单、哪个 SKU、什么状态）→ 复现步骤（编号）→ 实际 vs 预期 → 证据（日志片段、SQL 结果、录屏）。</p>
+  <div class="say">
+    <span class="lbl">模板</span>
+    <p>出库单 <strong>[单号]</strong> 在未复核状态下调用发货接口返回成功，但库存台账的<strong>锁定量没有释放</strong>。预期应返回状态错误码。附件是日志和库表对比。</p>
+  </div>
+
+  <h3>7.3 提修改意见的分寸</h3>
+  <ul>
+    <li>讲<strong>现象和影响</strong>，不替开发决定实现方案：“这个不拦会出现同一库位负库存”</li>
+    <li>用<strong>疑问句</strong>代替断言：“是不是应该在分配时校验软锁状态？”</li>
+    <li>提<strong>优先级</strong>不提<strong>对错</strong>：“不影响主流程，但会影响对账，建议和这次一起改”</li>
+    <li>别越界：“具体改哪一层我不确定，我看代码只是想确认这个分支有没有被覆盖”</li>
+  </ul>
+</section>
+
+<section id="code">
+  <h2>八、代码要看哪（被问“测试要不要看代码”时）</h2>
+
+  <h3>8.1 结论 + 标准答法 ★</h3>
+  <div class="say">
+    <span class="lbl g">标准答法</span>
+    <p>要看，但<strong>我不做代码审查</strong>。我看代码只解决三个问题：<strong>状态和分支有多少</strong>（决定用例数量）、<strong>哪里会并发</strong>（决定异常场景）、<strong>事务边界在哪</strong>（决定数据一致性怎么验）。</p>
+    <p>业务逻辑怎么实现我不关心，但“<strong>有多少条路径</strong>”我必须知道，不然用例全靠猜。</p>
+  </div>
+
+  <h3>8.2 只看四类位置</h3>
+  <table>
+    <thead><tr><th>看什么</th><th>具体在哪</th><th>提取什么</th></tr></thead>
+    <tbody>
+      <tr><td><strong>状态与常量</strong></td><td>库存状态常量、盘点模式常量、审核标准定义</td><td>状态全集 + 合法迁移 → 状态机用例</td></tr>
+      <tr><td><strong>校验分支</strong></td><td>Service 里的 <code>if (...) throw BizException</code></td><td>每个分支 = 一条异常用例，性价比最高</td></tr>
+      <tr><td><strong>规则参数</strong></td><td>费率结构（免租期/最低收费/阶梯/折扣/税率/取整）、称重 3%、软锁时长与续锁上限、库位预占 15 分钟</td><td>边界值从哪来</td></tr>
+      <tr><td><strong>事务与定时</strong></td><td>事务注解加在哪一层、每分钟的软锁扫描、日账单自动生成</td><td>并发场景、部分成功算不算缺陷</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note blue">
+    <strong>怎么读（关键，别陷进去）：</strong>不读实现逻辑，只读<strong>方法签名 + 类注释 + 常量 + if 条件</strong>。好代码的类注释里直接写了口径和不变量——<strong>两页注释胜过两千行代码</strong>。
+  </div>
+</section>
+
+<section id="qa">
+  <h2>九、追问 20 问（差答 / 好答对照）</h2>
+  <p class="sub">左边这些答法我都见过，每一条都会被继续追打；右边不是唯一答案，但都能把球打回去。</p>
+
+  <table>
+    <thead><tr><th style="width:22%">问题</th><th style="width:34%">差答（会被追打）</th><th>好答（能收住）</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="q">1. 介绍一下你的项目</td>
+        <td class="bad">“这个系统有十二个模块，包括入库、出库、库存、计费……”</td>
+        <td class="good">走 1.1 的 15 秒版：生意 → 死穴 → 我的位置。</td>
+      </tr>
+      <tr>
+        <td class="q">2. 你负责哪些模块</td>
+        <td class="bad">“出库、入库、库存、盘点、报表我都做。”</td>
+        <td class="good">“三块：出库履约、库存与盘点、接口回归。入库和计费是同事在跟。”<strong>有边界才可信。</strong></td>
+      </tr>
+      <tr>
+        <td class="q">3. 为什么只给你三个模块</td>
+        <td class="bad">“因为我入职时间短。”</td>
+        <td class="good">“测试按链路分工，我跟的是出库和库存两条线。三个模块听起来不多，但出库这条链上有六个状态、四十多个动作接口，我覆盖的是最容易出错的那部分。”</td>
+      </tr>
+      <tr>
+        <td class="q">4. 这个系统最难测的是什么</td>
+        <td class="bad">“功能太多了，模块很复杂。”</td>
+        <td class="good">“难的不是功能，是<strong>数量要对得上</strong>。功能错会报错，数量错不报错，等到月底对账才发现。”</td>
+      </tr>
+      <tr>
+        <td class="q">5. 库存怎么保证对得上</td>
+        <td class="bad">“每次操作后我都检查一下数量。”</td>
+        <td class="good">“用恒等式：在库可用 + 锁定 + 冻结 = 物理库存。做成一条 SQL，每类操作后跑一次，不等就说明有状态没回滚。”</td>
+      </tr>
+      <tr>
+        <td class="q">6. 软锁是什么，为什么需要</td>
+        <td class="bad">“就是锁住库存，防止别人用。”</td>
+        <td class="good">“分配之后库存要被占住，但不能永久占——所以锁带到期时间，超时自动释放。不然一张弃单会把库存锁死。”</td>
+      </tr>
+      <tr>
+        <td class="q">7. 盘点期间要发货怎么办</td>
+        <td class="bad">“那就等盘点完再发。”（其实系统没这么做）</td>
+        <td class="good">“这正是我提过的设计冲突：盘点建单就锁库位，出库又要拣这个库位。<strong>这是需求问题不是缺陷</strong>，我会先确认产品口径：是暂停该库位的分配，还是允许出库但标记差异。定下来才能写预期结果。”</td>
+      </tr>
+      <tr>
+        <td class="q">8. 出库有哪些状态</td>
+        <td class="bad">“就是创建、执行、完成。”</td>
+        <td class="good">“通知、已分配、已拣货、复核完成、已发货，加上取消这条分支。我按<strong>迁移</strong>测，不按状态测。”</td>
+      </tr>
+      <tr>
+        <td class="q">9. 你怎么设计用例</td>
+        <td class="bad">“用等价类、边界值、场景法。”</td>
+        <td class="good">走 5.1 的四问法 + 5.3 的软锁案例。</td>
+      </tr>
+      <tr>
+        <td class="q">10. 有没有漏测过</td>
+        <td class="bad">“没有，我测得比较全。”</td>
+        <td class="good">“漏过。上线后发现取消发货只回滚了单据、没退操作费。后来我把‘取消’类动作都加了落点清单——<strong>单据、库存、流水、费用四处都要断言</strong>。”</td>
+      </tr>
+      <tr>
+        <td class="q">11. 自动化怎么做的</td>
+        <td class="bad">“我用 Selenium 做 UI 自动化。”</td>
+        <td class="good">“以接口为主，UI 只做冒烟。理由：这个系统的风险在数据一致性，不在页面渲染。”</td>
+      </tr>
+      <tr>
+        <td class="q">12. 为什么用 Python 不用 Java</td>
+        <td class="bad">“Python 更简单。”</td>
+        <td class="good">“因为团队能接手改。一个只有我会维护的测试工程，价值会随我离职归零。”</td>
+      </tr>
+      <tr>
+        <td class="q">13. 断言怎么写</td>
+        <td class="bad">“断言返回状态码是 200。”</td>
+        <td class="good">五层：状态码、业务码、结构、业务值、<strong>查库一致性</strong>。</td>
+      </tr>
+      <tr>
+        <td class="q">14. 幂等怎么测</td>
+        <td class="bad">“重复调一次，看有没有报错。”</td>
+        <td class="good">“重复调三次，看<strong>副作用只发生一次</strong>——库存只锁一次、流水只加一条。只看返回成功是测不出重复扣减的。”</td>
+      </tr>
+      <tr>
+        <td class="q">15. 越权怎么测</td>
+        <td class="bad">“用别人的账号登录试试。”</td>
+        <td class="good">“两个维度：<strong>权限码</strong>（有没有这个操作的权限）和<strong>数据范围</strong>（同权限下能不能看到别的货主、别的仓）。后者更容易漏。”</td>
+      </tr>
+      <tr>
+        <td class="q">16. 计费怎么测</td>
+        <td class="bad">“按需求把各种费用都算一遍。”</td>
+        <td class="good">走 3.1 的 40 秒版：按公式拆成四个因子。</td>
+      </tr>
+      <tr>
+        <td class="q">17. 你怎么定位问题</td>
+        <td class="bad">“先问开发是不是他改的。”</td>
+        <td class="good">走 7.1 的五步，重点讲“先看日志里的 SQL”。</td>
+      </tr>
+      <tr>
+        <td class="q">18. 开发说这不是 bug 怎么办</td>
+        <td class="bad">“那就算了。”</td>
+        <td class="good">“我会把判断标准拉回<strong>需求或口径</strong>：要么找出需求原文，要么把影响说清楚让他判断。都不同意就记录结论，让产品定，我不跟他争对错。”</td>
+      </tr>
+      <tr>
+        <td class="q">19. 需求不明确怎么办</td>
+        <td class="bad">“等需求写清楚再测。”</td>
+        <td class="good">“先按我认为最合理的口径写预期，然后<strong>在用例评审时把这条标黄</strong>，让产品当场确认。不确认的我就不写进回归集——模糊的预期比没有预期更危险。”</td>
+      </tr>
+      <tr>
+        <td class="q">20. 重做一次你会怎么改</td>
+        <td class="bad">“我会测得更全。”</td>
+        <td class="good">“我会更早介入。这次我是等到提测才开始碰系统，如果能从需求评审就参与，很多口径问题在写代码前就能定下来，比事后报缺陷便宜得多。”</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note red">
+    <strong>被问到完全不会的细节时，只用这一句：</strong>“这块不是我覆盖的，我不好猜。但我这条线上对应的处理方式是……”。<strong>不要硬编</strong>——面试官对“不知道”的容忍度，远高于对“编了个细节”的容忍度。
+  </div>
+</section>
+
+<section id="memo">
+  <h2>十、一页速记卡</h2>
+  <p class="sub">进场前五分钟只看这一页。八句话，能撑住整场。</p>
+
+  <div class="memo">
+    <p><span class="num">1</span><b>生意</b>：客户把货存在我们仓里，我们按合同收仓租和操作费。</p>
+    <p><span class="num">2</span><b>死穴</b>：这类系统最怕<strong>库存对不上</strong>——功能错会报错，数量错不报错。</p>
+    <p><span class="num">3</span><b>系统</b>：单据是状态机，库存是台账；库存不存数值，靠作业流水累加。</p>
+    <p><span class="num">4</span><b>位置</b>：我负责出库履约、库存与盘点、接口回归，守“数量不能错”这条线。</p>
+    <p><span class="num">5</span><b>方法</b>：把“数量不能错”做成断言——<strong>在库可用 + 锁定 + 冻结 = 物理库存</strong>。</p>
+    <p><span class="num">6</span><b>最值钱的一段</b>：软锁用例的推导——两个入口改同一状态，必然有竞争窗口，结果只有三种，只有一种是对的。</p>
+    <p><span class="num">7</span><b>关联</b>：一个动作四五个落点，只验接口返回抓不到漏落库。</p>
+    <p><span class="num">8</span><b>代码</b>：我不做代码审查，只看有多少条路径、哪里并发、事务边界在哪。</p>
+  </div>
+
+  <div class="note green">
+    <strong>最后一句（被问“你觉得自己做得怎么样”）：</strong><br>
+    “我负责的三块里，库存和盘点是唯一有数学约束的，我把它做成了可断言的东西——每次操作后跑恒等式，能在提测当天发现问题，而不是等财务对账。出库那条链的异常分支我覆盖得比较全，因为状态多、回滚多。自动化我只做了核心链路，覆盖率不高，但每日跑，红了当天就修。”
+  </div>
+
+  <div class="note blue">
+    <strong>需要填的数字（不填就别提）：</strong>接口用例条数、有效缺陷数、回归耗时前后、问题集条数。<strong>说不清来源的数字，宁可不说。</strong>
+  </div>
+</section>
+
+<div class="footer">整理日期：2026-11-09　｜　仓储项目面试口述稿（配合《项目时间轴与责任阶梯》第十四节使用）</div>
+</div>
+</body>
+</html>
